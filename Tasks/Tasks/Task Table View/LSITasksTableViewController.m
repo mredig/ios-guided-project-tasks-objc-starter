@@ -9,6 +9,7 @@
 #import "LSITasksTableViewController.h"
 #import "LSITaskController.h"
 #import "LSITask.h"
+#import "LSITaskDetailViewController.h"
 
 @interface LSITasksTableViewController ()
 
@@ -52,6 +53,22 @@
 }
 
 // MARK: - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+	if ([segue.identifier isEqualToString:@"ShowTaskDetail"]) {
+		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+		LSITaskDetailViewController* detailVC = segue.destinationViewController;
+		detailVC.taskController = self.taskController;
+		LSITask* task = [self.taskController taskAtIndex:indexPath.row];
+		detailVC.task = task;
+	}
+
+	if ([segue.identifier isEqualToString:@"ShowCreateTask"]) {
+		LSITaskDetailViewController* detailVC = segue.destinationViewController;
+		detailVC.taskController = self.taskController;
+	}
+}
 
 // MARK: - Properties
 
