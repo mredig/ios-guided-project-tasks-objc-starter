@@ -7,6 +7,8 @@
 //
 
 #import "LSITasksTableViewController.h"
+#import "LSITaskController.h"
+#import "LSITask.h"
 
 @interface LSITasksTableViewController ()
 
@@ -16,17 +18,37 @@
 
 @implementation LSITasksTableViewController
 
+- (LSITaskController *)taskController {
+	if (!_taskController) {
+		_taskController = [[LSITaskController alloc] init];
+		[self createTestData];
+	}
+	return _taskController;
+}
+
+- (void)createTestData {
+    LSITask *task = [[LSITask alloc] initWithName:@"Walk the dog" notes:@"Walk 3 miles" date:[NSDate dateWithTimeIntervalSinceNow:60]];
+
+    LSITask *task2 = [[LSITask alloc] initWithName:@"Eat lunch" notes:@"Make a sandwich" date:[NSDate date]];
+
+    [self.taskController addTask:task];
+    [self.taskController addTask:task2];
+}
 
 // MARK: - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	#warning FIXME
-	return 0;
+	return self.taskController.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-#warning FIXME
-    return [[UITableViewCell alloc] init];
+	UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
+
+	LSITask* task = [self.taskController taskAtIndex:indexPath.row];
+
+	cell.textLabel.text = task.name;
+	cell.detailTextLabel.text = [self.dateFormatter stringFromDate:task.date];
+	return cell;
 }
 
 // MARK: - Navigation

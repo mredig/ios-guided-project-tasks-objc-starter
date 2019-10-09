@@ -10,4 +10,13 @@
 
 @implementation LSITask
 
+- (instancetype)initWithName:(NSString *)name notes:(NSString *)notes date:(NSDate *)date {
+	if (self = [super init]) {
+		_name = name;
+		_notes = notes;
+		_date = date;
+	}
+	return self;
+}
+
 @end

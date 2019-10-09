@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		330FF8B1234E3F7E00E66060 /* LSITask.m in Sources */ = {isa = PBXBuildFile; fileRef = 330FF8B0234E3F7E00E66060 /* LSITask.m */; };
+		330FF8B5234E524900E66060 /* LSITask.m in Sources */ = {isa = PBXBuildFile; fileRef = 330FF8B0234E3F7E00E66060 /* LSITask.m */; };
+		330FF8B8234E55CA00E66060 /* LSITaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 330FF8B7234E55CA00E66060 /* LSITaskController.m */; };
+		330FF8B9234E55D700E66060 /* LSITaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 330FF8B7234E55CA00E66060 /* LSITaskController.m */; };
 		BD08F328234E3AF800771883 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD08F327234E3AF800771883 /* AppDelegate.m */; };
 		BD08F333234E3AF900771883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD08F332234E3AF900771883 /* Assets.xcassets */; };
 		BD08F336234E3AF900771883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD08F334234E3AF900771883 /* LaunchScreen.storyboard */; };
@@ -31,6 +34,8 @@
 /* Begin PBXFileReference section */
 		330FF8AF234E3F7E00E66060 /* LSITask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSITask.h; sourceTree = "<group>"; };
 		330FF8B0234E3F7E00E66060 /* LSITask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSITask.m; sourceTree = "<group>"; };
+		330FF8B6234E55CA00E66060 /* LSITaskController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSITaskController.h; sourceTree = "<group>"; };
+		330FF8B7234E55CA00E66060 /* LSITaskController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSITaskController.m; sourceTree = "<group>"; };
 		BD08F323234E3AF800771883 /* Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD08F326234E3AF800771883 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
 		BD08F327234E3AF800771883 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -121,6 +126,8 @@
 			children = (
 				330FF8AF234E3F7E00E66060 /* LSITask.h */,
 				330FF8B0234E3F7E00E66060 /* LSITask.m */,
+				330FF8B6234E55CA00E66060 /* LSITaskController.h */,
+				330FF8B7234E55CA00E66060 /* LSITaskController.m */,
 				330FF8B3234E40EB00E66060 /* Task Table View */,
 				330FF8B2234E3F9B00E66060 /* Task Detail */,
 				330FF8B4234E410F00E66060 /* Misc */,
@@ -190,7 +197,6 @@
 					};
 					BD08F33D234E3AF900771883 = {
 						CreatedOnToolsVersion = 11.1;
-						TestTargetID = BD08F322234E3AF800771883;
 					};
 				};
 			};
@@ -239,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				330FF8B1234E3F7E00E66060 /* LSITask.m in Sources */,
+				330FF8B8234E55CA00E66060 /* LSITaskController.m in Sources */,
 				BD08F328234E3AF800771883 /* AppDelegate.m in Sources */,
 				BD08F352234E3B3000771883 /* LSITasksTableViewController.m in Sources */,
 				BD08F351234E3B3000771883 /* LSITaskDetailViewController.m in Sources */,
@@ -251,6 +258,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD08F343234E3AF900771883 /* TasksTests.m in Sources */,
+				330FF8B9234E55D700E66060 /* LSITaskController.m in Sources */,
+				330FF8B5234E524900E66060 /* LSITask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +434,6 @@
 		BD08F34B234E3AF900771883 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LCRLD36TZ6;
 				INFOPLIST_FILE = TasksTests/Info.plist;
@@ -438,14 +446,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.TasksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tasks.app/Tasks";
 			};
 			name = Debug;
 		};
 		BD08F34C234E3AF900771883 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LCRLD36TZ6;
 				INFOPLIST_FILE = TasksTests/Info.plist;
@@ -458,7 +464,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.TasksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tasks.app/Tasks";
 			};
 			name = Release;
 		};

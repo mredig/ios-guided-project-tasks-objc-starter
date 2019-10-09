@@ -8,10 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface LSITask : NSObject
+
+@property NSString* name;
+@property NSString* notes;
+@property NSDate* date;
+
+
+- (instancetype)initWithName:(NSString*)name
+					   notes:(NSString*) notes
+						date:(NSDate*) date;
 
 @end
 
-NS_ASSUME_NONNULL_END
+
+
