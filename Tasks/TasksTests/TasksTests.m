@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "LSITask.h"
+#import "NSArray+SentenceGeneration.h"
 
 @interface TasksTests : XCTestCase
 
@@ -29,6 +30,14 @@
 											 date:[NSDate date]];
 
 	NSLog(@"Task: %@", task.name);
+}
+
+- (void)testSentence {
+	NSArray* myArray = @[@"fe", @"fi", @"fo", @"fum"];
+
+	NSString* example = [myArray sentenceFromArray];
+
+	NSLog(example);
 }
 
 @end
