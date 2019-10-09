@@ -7,6 +7,8 @@
 //
 
 #import "LSITaskDetailViewController.h"
+#import "LSITask.h"
+#import "LSITaskController.h"
 
 @interface LSITaskDetailViewController ()
 
@@ -29,13 +31,35 @@
 // MARK: - Actions
 
 - (IBAction)save:(id)sender {
+	[self saveTask];
+}
 
+- (void)saveTask {
+	BOOL isNewTask = self.task == nil;
+
+	LSITask* task = self.task ?: [[LSITask alloc] init];
+	task.name = self.nameTextField.text;
+	task.notes = self.notesTextView.text;
+	task.date = self.datePicker.date;
+
+	if (isNewTask) {
+		[self.taskController addTask:task];
+	}
+
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 // MARK: - Private
 
 - (void)updateViews {
-    
+	if (!self.isViewLoaded || !self.task) {
+		return;
+	}
+
+	self.title = self.task.name;
+	self.nameTextField.text = self.task.name;
+	self.notesTextView.text = self.task.notes;
+	self.datePicker.date = self.task.date;
 }
 
 // MARK: - Properties

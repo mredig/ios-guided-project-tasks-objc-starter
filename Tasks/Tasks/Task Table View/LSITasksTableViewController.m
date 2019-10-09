@@ -19,6 +19,11 @@
 
 @implementation LSITasksTableViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	[self.tableView reloadData];
+}
+
 - (LSITaskController *)taskController {
 	if (!_taskController) {
 		_taskController = [[LSITaskController alloc] init];
