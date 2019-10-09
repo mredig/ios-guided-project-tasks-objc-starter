@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330FF8B1234E3F7E00E66060 /* LSITask.m in Sources */ = {isa = PBXBuildFile; fileRef = 330FF8B0234E3F7E00E66060 /* LSITask.m */; };
 		BD08F328234E3AF800771883 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD08F327234E3AF800771883 /* AppDelegate.m */; };
 		BD08F333234E3AF900771883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD08F332234E3AF900771883 /* Assets.xcassets */; };
 		BD08F336234E3AF900771883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD08F334234E3AF900771883 /* LaunchScreen.storyboard */; };
@@ -28,8 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		330FF8AF234E3F7E00E66060 /* LSITask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSITask.h; sourceTree = "<group>"; };
+		330FF8B0234E3F7E00E66060 /* LSITask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSITask.m; sourceTree = "<group>"; };
 		BD08F323234E3AF800771883 /* Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD08F326234E3AF800771883 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BD08F326234E3AF800771883 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
 		BD08F327234E3AF800771883 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BD08F332234E3AF900771883 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD08F335234E3AF900771883 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +66,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330FF8B2234E3F9B00E66060 /* Task Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BD08F34E234E3B3000771883 /* LSITaskDetailViewController.h */,
+				BD08F34D234E3B2F00771883 /* LSITaskDetailViewController.m */,
+			);
+			path = "Task Detail";
+			sourceTree = "<group>";
+		};
+		330FF8B3234E40EB00E66060 /* Task Table View */ = {
+			isa = PBXGroup;
+			children = (
+				BD08F350234E3B3000771883 /* LSITasksTableViewController.h */,
+				BD08F34F234E3B3000771883 /* LSITasksTableViewController.m */,
+			);
+			path = "Task Table View";
+			sourceTree = "<group>";
+		};
+		330FF8B4234E410F00E66060 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				BD08F326234E3AF800771883 /* AppDelegate.h */,
+				BD08F327234E3AF800771883 /* AppDelegate.m */,
+				BD08F353234E3B3900771883 /* Main.storyboard */,
+				BD08F332234E3AF900771883 /* Assets.xcassets */,
+				BD08F334234E3AF900771883 /* LaunchScreen.storyboard */,
+				BD08F337234E3AF900771883 /* Info.plist */,
+				BD08F338234E3AF900771883 /* main.m */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		BD08F31A234E3AF800771883 = {
 			isa = PBXGroup;
 			children = (
@@ -84,17 +119,11 @@
 		BD08F325234E3AF800771883 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				BD08F326234E3AF800771883 /* AppDelegate.h */,
-				BD08F327234E3AF800771883 /* AppDelegate.m */,
-				BD08F34E234E3B3000771883 /* LSITaskDetailViewController.h */,
-				BD08F34D234E3B2F00771883 /* LSITaskDetailViewController.m */,
-				BD08F350234E3B3000771883 /* LSITasksTableViewController.h */,
-				BD08F34F234E3B3000771883 /* LSITasksTableViewController.m */,
-				BD08F353234E3B3900771883 /* Main.storyboard */,
-				BD08F332234E3AF900771883 /* Assets.xcassets */,
-				BD08F334234E3AF900771883 /* LaunchScreen.storyboard */,
-				BD08F337234E3AF900771883 /* Info.plist */,
-				BD08F338234E3AF900771883 /* main.m */,
+				330FF8AF234E3F7E00E66060 /* LSITask.h */,
+				330FF8B0234E3F7E00E66060 /* LSITask.m */,
+				330FF8B3234E40EB00E66060 /* Task Table View */,
+				330FF8B2234E3F9B00E66060 /* Task Detail */,
+				330FF8B4234E410F00E66060 /* Misc */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -152,6 +181,7 @@
 		BD08F31B234E3AF800771883 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LSI;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Lambda, Inc";
 				TargetAttributes = {
@@ -208,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				330FF8B1234E3F7E00E66060 /* LSITask.m in Sources */,
 				BD08F328234E3AF800771883 /* AppDelegate.m in Sources */,
 				BD08F352234E3B3000771883 /* LSITasksTableViewController.m in Sources */,
 				BD08F351234E3B3000771883 /* LSITaskDetailViewController.m in Sources */,
@@ -361,7 +392,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LCRLD36TZ6;
-				INFOPLIST_FILE = Tasks/Info.plist;
+				INFOPLIST_FILE = Tasks/Misc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,7 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LCRLD36TZ6;
-				INFOPLIST_FILE = Tasks/Info.plist;
+				INFOPLIST_FILE = Tasks/Misc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
